@@ -1,9 +1,9 @@
 #!/usr/local/php/bin/php
 <?php
-require_once('./init.php');
-require_once(ROOT_PATH . '/lib/Core/Core.php');
-require_once(ROOT_PATH . '/lib/Core/Base.php');
-require_once(ROOT_PATH . '/crawl/spider.class.php');
+require('./init.php');
+require(ROOT_PATH . '/lib/Core/Core.php');
+require(ROOT_PATH . '/lib/Core/Base.php');
+require(ROOT_PATH . '/crawl/spider.class.php');
 
 $param = (isset($argv[1]) && !empty($argv[1])) ? trim($argv[1]) : '';
 
