@@ -1,6 +1,6 @@
 #!/usr/local/php/bin/php
 <?php
-require_once('./init.php');
+require('./init.php');
 
 $param = (isset($argv[1]) && !empty($argv[1])) ? trim($argv[1]) : '';
 
@@ -34,7 +34,7 @@ if(strpos($param, '/')){
 }
 
 if(file_exists($file)){
-	require_once($file);
+	require($file);
 
     if(isset($action)){
         $task = ucfirst($task);
