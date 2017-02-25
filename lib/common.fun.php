@@ -1,7 +1,4 @@
 <?php
-function db($once){
-    return DB::instance($once);
-}
 
 /**
  * 转化文本为UTF-8格式
@@ -126,6 +123,9 @@ function parseUrl($url){
     return $result;
 }
 
+/**
+ * 随机获取USER AGENT
+ */
 function userAgent(){
     $userAgent = array(
         0 => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.11 TaoBrowser/2.0 Safari/536.11',
@@ -197,7 +197,9 @@ function dump($var, $echo = true, $label = null){
         return $output;
     }
 }
-
+/**
+ * 断点调试
+ */
 function debug($var){
     dump($var);
     die();
