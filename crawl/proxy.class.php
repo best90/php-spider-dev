@@ -1,7 +1,8 @@
 <?php
+    namespace Spider;
     use Ares333\CurlMulti\Core;
 
-    class Spider_proxy{
+    class Proxy{
         public $curl;
 
         public function __construct(){
