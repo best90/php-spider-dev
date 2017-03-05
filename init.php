@@ -15,7 +15,6 @@ $domain_tld = $config['tld'];
 
 require(ROOT_PATH . '/lib/common.fun.php');
 require(ROOT_PATH . '/lib/phpQuery.class.php');
-require(ROOT_PATH . '/lib/db.class.php');
 
 foreach ($config['db'] as $once => $cfg){
     $db[$once] = new db($once);
