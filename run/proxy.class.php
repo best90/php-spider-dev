@@ -88,6 +88,7 @@
             echo $this->time."s has ".$total."\r\n";
         }
 
+        //随机取一条代理
         public function getOneProxy(){
             $proxy = $this->getProxy();
             echo $proxy[array_rand($proxy,1)];

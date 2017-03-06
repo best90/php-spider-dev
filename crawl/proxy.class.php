@@ -9,6 +9,7 @@
             $this->curl = new Core();
         }
 
+        //抓取IP代理
         public function get(){
            $this->curl->maxThread = 1;
 
