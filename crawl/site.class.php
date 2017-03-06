@@ -9,6 +9,7 @@
             $this->curl = new Core();
         }
 
+        //抓取alexa信息
         public function alexa(){
             $db=new PDO('mysql:dbname=site;host=127.0.0.1','root','root');
             $db->exec("set names utf8");
@@ -58,6 +59,7 @@
             }
         }
 
+        //抓取whois信息
         public function whois(){
             $db=new PDO('mysql:dbname=site;host=127.0.0.1','root','root');
             $db->exec("set names utf8");
