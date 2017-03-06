@@ -1,10 +1,13 @@
 <?php
 
 	return array(
-		'company' => array (
-			'username' => 'root',
-			'password' => 'root',
-			'dsn' =>"mysql:host=127.0.0.1;dbname=company"
+		'test' => array (
+			'database_type' => 'mysql',
+    		'database_name' => 'test',
+    		'server' => 'localhost',
+    		'username' => 'your_username',
+    		'password' => 'your_password',
+    		'charset' => 'utf8'
 		),
 	);
 
