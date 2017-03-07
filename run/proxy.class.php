@@ -1,4 +1,5 @@
 <?php
+    namespace Run;
     class Proxy{
         public $db;
         public $once;              //控制线程是否单独运行 false/true 

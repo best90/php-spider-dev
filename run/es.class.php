@@ -1,6 +1,5 @@
 <?php
-    require 'vendor/autoload.php';
-
+    namespace Run;
     class Es{
         public $db;
         public $hosts;

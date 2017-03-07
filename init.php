@@ -15,7 +15,8 @@ $domain_tld = $config['tld'];
 
 require(ROOT_PATH . '/lib/common.fun.php');
 require(ROOT_PATH . '/lib/phpQuery.class.php');
+require('vendor/autoload.php');
 
 foreach ($config['db'] as $once => $cfg){
-    $db[$once] = new db($once);
+    $db[$once] = new medoo($once);
 }
