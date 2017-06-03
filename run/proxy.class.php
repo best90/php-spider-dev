@@ -19,7 +19,7 @@
         }
 
         //自动更新代理ip
-        public function autorun(){
+        public function autoRun(){
             while (true) {
                 $proxy = $this->getIpList();
                 $this->syncToDB($proxy);
