@@ -2,7 +2,7 @@
 
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 
-NAME=nutstool-spider
+NAME=php-spider
 IMAGE=php:5.6-cli
 
 # env

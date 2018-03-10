@@ -3,7 +3,7 @@
 require('./init.php');
 require(ROOT_PATH . '/lib/Core/Core.php');
 require(ROOT_PATH . '/lib/Core/Base.php');
-require(ROOT_PATH . '/crawl/spider.class.php');
+require(ROOT_PATH . '/crawl/spider.php');
 
 $param = (isset($argv[1]) && !empty($argv[1])) ? trim($argv[1]) : '';
 
@@ -11,7 +11,7 @@ if(strpos($param, '/')){
     $param = explode('/', $param);
     $task = lcfirst($param[0]);
     $action = lcfirst($param[1]);
-    $file = ROOT_PATH .'/crawl/'.$task.'.class.php';
+    $file = ROOT_PATH .'/crawl/'.$task.'.php';
 
     if(count($param) > 2){
         $tmp_param = array_slice($param, 2);
@@ -41,7 +41,7 @@ if(file_exists($file)){
 
     if(isset($action)){
         $task = ucfirst($task);
-        $class = new $task();
+        $class = new $task;
 
         if(method_exists($class, $action)){
 

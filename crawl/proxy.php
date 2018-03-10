@@ -1,5 +1,4 @@
 <?php
-    namespace Spider;
     use Ares333\CurlMulti\Core;
 
     class Proxy{

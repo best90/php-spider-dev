@@ -1,12 +1,11 @@
 <?php
-    namespace Run;
     class Es{
         protected $db;
         public $hosts;
         protected $client;
 
         public function __construct(){
-            $this->db = new PDO('mysql:dbname=nuts_tool;host=127.0.0.1', 'root', 'root');
+            $this->db = new \PDO('mysql:dbname=nuts_tool;host=127.0.0.1', 'root', 'root');
             $this->db->exec("SET NAMES UTF8");
 
             $this->hosts = [

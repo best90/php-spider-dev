@@ -8,7 +8,7 @@ if(strpos($param, '/')){
     $param = explode('/', $param);
     $task = lcfirst($param[0]);
     $action = lcfirst($param[1]);
-    $file = ROOT_PATH .'/run/'.$task.'.class.php';
+    $file = ROOT_PATH .'/run/'.$task.'.php';
 
     if(count($param) > 2){
         $tmp_param = array_slice($param, 2);

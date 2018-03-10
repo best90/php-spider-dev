@@ -1,5 +1,4 @@
 <?php
-    namespace Run;
     class Proxy{
         public $db;
         public $once;              //控制线程是否单独运行 false/true 
@@ -11,7 +10,7 @@
         public $url = ['http://api.zdaye.com/?api=201606131435452798&gb=4'];
 
         public function __construct($once = true){
-            $this->db = new PDO('mysql:dbname=proxy;host=127.0.0.1','root','root');
+            $this->db = new \PDO('mysql:dbname=proxy;host=127.0.0.1','root','root');
             $this->db->exec("set names utf8");
             
             $this->once = isset($once) ? $once : true;

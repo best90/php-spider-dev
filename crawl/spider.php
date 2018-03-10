@@ -1,5 +1,4 @@
 <?php
-    namespace Spider;
     use Ares333\CurlMulti\Core;
     use Ares333\CurlMulti\Base;
 

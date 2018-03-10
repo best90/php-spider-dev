@@ -4,4 +4,14 @@ PHP爬虫采用php-multicurl多线程抓取爬虫类，文本提取采用phpquer
 
 请在CLI命令行模式下运行。
 
+抓取命令：
+```
+php crawl.php site/alex
+```
+
+处理命令：
+```
+php run.php proxy/run
+```
+
 待优化。。。

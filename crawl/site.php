@@ -1,5 +1,4 @@
 <?php
-    namespace Spider;
     use Ares333\CurlMulti\Core;
 
     class Site{
@@ -11,7 +10,7 @@
 
         //抓取alexa信息
         public function alexa(){
-            $db=new PDO('mysql:dbname=site;host=127.0.0.1','root','root');
+            $db=new \PDO('mysql:dbname=site;host=127.0.0.1','root','root');
             $db->exec("set names utf8");
 
             $this->curl->maxThread = 1;
