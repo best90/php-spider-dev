@@ -1,6 +1,6 @@
 #!/usr/local/php/bin/php
 <?php
-require('./init.php');
+require('init.php');
 
 $param = (isset($argv[1]) && !empty($argv[1])) ? trim($argv[1]) : '';
 
@@ -8,7 +8,6 @@ if(strpos($param, '/')){
     $param = explode('/', $param);
     $task = lcfirst($param[0]);
     $action = lcfirst($param[1]);
-    $file = ROOT_PATH .'/run/'.$task.'.php';
 
     if(count($param) > 2){
         $tmp_param = array_slice($param, 2);
@@ -30,34 +29,28 @@ if(strpos($param, '/')){
     }
 }else{
     $task = lcfirst($param);
-    $file = ROOT_PATH .'/run/'.$task.'.php';
 }
 
-if(file_exists($file)){
-	require($file);
+if(isset($action)){
+    $task = ucfirst($task);
+    $class = 'worker\\'.$task;
+    $class = new $class();
 
-    if(isset($action)){
-        $task = ucfirst($task);
-        $class = new $task();
-
-        try{
-            if(method_exists($class, $action)){
-                if(isset($_GET['loop'])){
-                    $loop = 0;
-                    while ($loop < intval($_GET['loop'])){
-                        $class->$action();
-                        $loop ++;
-                    }
-                }else{
+    try{
+        if(method_exists($class, $action)){
+            if(isset($_GET['loop'])){
+                $loop = 0;
+                while ($loop < intval($_GET['loop'])){
                     $class->$action();
+                    $loop ++;
                 }
             }else{
-                throw new Exception('action is not found in \''.$task.'\'.');
+                $class->$action();
             }
-        }catch (Exception $e){
-            echo $e->getMessage().EOL;
+        }else{
+            throw new Exception('action is not found in \''.$task.'\'.');
         }
+    }catch (Exception $e){
+        echo $e->getMessage().EOL;
     }
-}else{
-	echo "ERROR TASK : ".lcfirst($task);
 }

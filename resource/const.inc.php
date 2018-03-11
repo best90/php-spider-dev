@@ -4,10 +4,10 @@ define('EOL',PHP_EOL);
 define('TAB',"\t");
 define('BS'," ");
 
-define('CACHE_PATH',ROOT_PATH.'/cache');
-define('TEMP_PATH',ROOT_PATH."/temp");
-define('SQL_LOG_PATH',TEMP_PATH."/sql");
-define('DATA_PATH',ROOT_PATH.'/data');
+define('CACHE_PATH',ROOT_PATH.'/cache/');
+define('DATA_PATH',ROOT_PATH.'/data/');
+define('TEMP_PATH',ROOT_PATH."/temp/");
+define('SQL_LOG_PATH',TEMP_PATH."/sql/");
 
 define('IS_CGI', strpos(PHP_SAPI, 'cgi') === 0 ? 1 : 0);
 define('IS_WIN', strstr(PHP_OS, 'WIN') ? 1 : 0);
