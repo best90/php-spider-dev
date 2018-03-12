@@ -4,6 +4,7 @@ class Loader
 {
     public static $vendor_map = [
         'crawler' => __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'crawler',
+        'resource' => __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'resource',
         'worker' => __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'worker'
     ];
 
@@ -26,7 +27,7 @@ class Loader
     private static function includeFile($file)
     {
         if (is_file($file)) {
-            include $file;
+            require $file;
         }
     }
 }

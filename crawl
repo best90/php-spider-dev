@@ -1,8 +1,8 @@
-#!/usr/local/php/bin/php
+#!/usr/bin/php
 <?php
 require('init.php');
-require(LIBS_PATH . 'Core/Core.php');
-require(LIBS_PATH . 'Core/Base.php');
+require(RESOURCE_PATH . 'Core/Core.php');
+require(RESOURCE_PATH . 'Core/Base.php');
 
 $param = (isset($argv[1]) && !empty($argv[1])) ? trim($argv[1]) : '';
 

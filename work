@@ -1,4 +1,4 @@
-#!/usr/local/php/bin/php
+#!/usr/bin/php
 <?php
 require('init.php');
 
