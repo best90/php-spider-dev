@@ -19,7 +19,6 @@ require(RESOURCE_PATH . 'phpQuery.php');
 require('vendor/autoload.php');
 
 require(RESOURCE_PATH . 'Loader.php');
-require(RESOURCE_PATH . 'Router.php');
 spl_autoload_register('Loader::autoload');
 
 foreach ($config['db'] as $once => $cfg){
