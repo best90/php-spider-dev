@@ -1,6 +1,6 @@
 <?php
 
-namespace Ares333\CurlMulti;
+namespace resource\core;
 
 use phpQuery;
 

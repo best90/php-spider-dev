@@ -2,8 +2,8 @@
 
 namespace crawler;
 
-use Ares333\CurlMulti\Core;
-use Ares333\CurlMulti\Base;
+use resource\core\Core;
+use resource\core\Base;
 
 class Crawler{
     public $curl;
@@ -15,6 +15,7 @@ class Crawler{
                 new Base (),
                 'cbCurlInfo'
         );
+
         if(method_exists($this,'_init')) $this->_init();
     }
 

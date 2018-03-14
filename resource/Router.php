@@ -12,7 +12,13 @@ class Router
     public function __construct()
     {
         $this->request = $_SERVER['argv'];
-        $this->process = isset($this->request[0]) ? trim($this->request[0]) : '';
+        $process_name = isset($this->request[0]) ? $this->request[0] : '';
+        if (strpos($process_name, '\\')) {
+            $path = explode('\\', $process_name);
+            $process_name = end($path);
+        }
+        $this->process = trim($process_name);
+
         $params = isset($this->request[1]) && !empty($this->request[1]) ? trim($this->request[1]) : '';
         $params = trim($params, '/');
 

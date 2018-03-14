@@ -2,7 +2,7 @@
 
 namespace crawler;
 
-use Ares333\CurlMulti\Core;
+use resource\core\Core;
 
 class Proxy{
     public $curl;
