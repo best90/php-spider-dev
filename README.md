@@ -6,12 +6,19 @@ PHP爬虫采用php-multicurl多线程抓取爬虫类，文本提取采用phpquer
 
 抓取命令：
 ```
-php crawler site/alex
+php crawl site/alex
 ```
-
+windows环境下也可使用：
+```
+crawl site/alex
+```
 处理命令：
 ```
-php worker proxy/run
+php work proxy/run
+```
+windows环境下也可使用：
+```
+work proxy/run
 ```
 
 待优化。。。

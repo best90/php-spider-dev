@@ -27,6 +27,8 @@ class Client
                     if(method_exists($class, 'setCache')) $class->setCache($cache);
                 }
 
+                if (method_exists($class, 'init')) $class->init();
+                if (method_exists($class, 'beforeRun')) $class->beforeRun();
                 if(isset($router->body['loop'])){
                     $loop = 0;
                     while ($loop < intval($router->body['loop'])){
@@ -36,6 +38,7 @@ class Client
                 }else{
                     $class->$action();
                 }
+                if (method_exists($class, 'afterRun')) $class->afterRun();
             }else{
                 exit('action is not found in \''.$task.'\'.');
             }
