@@ -5,6 +5,15 @@ namespace resource;
 class Debug
 {
     const IS_STOP = true;
+    public static $beginTime;
+
+    /**
+     * 开启计时
+     */
+    public static function begin()
+    {
+        static::$beginTime = microtime(true);
+    }
 
     /**
      * 是否ajax请求
@@ -22,9 +31,9 @@ class Debug
      */
     public static function basic($data)
     {
-        echo '<pre>';
-        print_r($data);
-        echo '</pre>';
+        var_dump($data);
+        echo PHP_EOL;
+        if (static::$beginTime) echo '耗时：'.(microtime(true) - static::$beginTime);
     }
 
     /**
